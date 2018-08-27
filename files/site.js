@@ -30555,9 +30555,11 @@ module.exports = function(context, readonly) {
 
     writable = !readonly;
 
+    // Set the initial location - BEN SNELL changed this
     function map(selection) {
         context.map = L.mapbox.map(selection.node(), null)
-            .setView([20, 0], 2)
+            // .setView([20, 0], 2)
+            .setView([40.7359, -73.9874], 12) // new york
             .addControl(L.mapbox.geocoderControl('mapbox.places', {
                 position: 'topright'
             }));
